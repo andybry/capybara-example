@@ -4,6 +4,7 @@ capybara-example
 ## Running
 
 `bundle install`
+
 `bundle exec cucumber`
 
 ## Purpose
