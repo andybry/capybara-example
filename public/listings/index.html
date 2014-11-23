@@ -1,0 +1,2895 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie8 search-root action-index-root"><![endif]-->
+<!--[if IE 9]><html class="ie9 search-root action-index-root"><![endif]-->
+<!--[if gt IE 9]><!--><html class="search-root action-index-root"><!--<![endif]-->
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-2.newrelic.com","errorBeacon":"bam.nr-data.net","licenseKey":"44b25aadf2","applicationID":"2671356","transactionName":"dQpeRUYLW1pUER0RUVcXU1kbDVlSVBs=","queueTime":5,"applicationTime":319,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-476.min.js","extra":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQ8OWFRQGwEGU1BRAgc="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(4),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(u){"stack"in u&&(t(5),t(3),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:4,2:7,3:5,4:18,5:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:18,2:19,ee:"QJf3ax",gos:"7eSDFh"}],5:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:19,2:18,ee:"QJf3ax"}],6:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:19,2:18,ee:"QJf3ax"}],7:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),u=s(a),f=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new f(t);try{i.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=f.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:4,2:19,ee:"QJf3ax"}],8:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=e(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var f=0;c>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:9,3:7,4:4,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],9:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){p.proto="https"===d.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=p.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,c=s.document,u="addEventListener",f="attachEvent",d=(""+location).split("?")[0],p=e.exports={offset:i(),origin:d,features:{}};c[u]?(c[u]("DOMContentLoaded",o,!1),s[u]("load",n,!1)):(c[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],18:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],19:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:18,ee:"QJf3ax"}]},{},["G9z0Bl",3,8]);</script>
+  <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<script>
+  document.documentElement.className += ' desktop';
+  document.documentElement.className += ' js-enabled';
+  document.documentElement.className += (window.innerWidth < window.innerHeight) ? ' portrait' : ' landscape';
+</script>
+
+<link href="https://cb221f9ed3aff0dcdae1-c271b55f96bd2eefabe3dbd471f05b11.ssl.cf3.rackcdn.com/assets/application-74a560d4249a86acc357052360a100c6.css" media="all" rel="stylesheet" />
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="d969D1YgAKDecpixhBuztUj8FDTM4fdlKdl+PxNc4f4=" name="csrf-token" />
+
+<meta id="optimostMVTisLive" name="optimostMVTisLive" content="true"/>
+
+<script src="//d3c3cq33003psk.cloudfront.net/opentag-51800-182584.js"></script>
+<link href="https://plus.google.com/+which/" rel="publisher" />
+
+<!-- Maxymiser script start -->
+<script type="text/javascript" src="//service.maxymiser.net/cdn/which/js/mmcore.js"></script>
+<!-- Maxymiser script end -->
+
+<!--[if lt IE 9]>
+<script src="https://cb221f9ed3aff0dcdae1-c271b55f96bd2eefabe3dbd471f05b11.ssl.cf3.rackcdn.com/assets/ie8-8f2a1ea2021ee9c29a71dae0b71d9bfa.js"></script>
+<link href="https://cb221f9ed3aff0dcdae1-c271b55f96bd2eefabe3dbd471f05b11.ssl.cf3.rackcdn.com/assets/respond/cross-domain/respond-proxy-5f1460cafb9081ad91dde19112f1eaf8.html" id="respond-proxy" rel="respond-proxy" />
+<link href="/reviews/static/respondjs/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+<script src="/reviews/static/respondjs/respond.proxy.js"></script>
+<![endif]-->
+
+  <meta content="Which? home | Technology | Tv &amp; home entertainment | Television reviews" name="hierarchy"></meta>
+    <link rel="canonical" href="/reviews/televisions" /><link rel='next' href='?page=2'/>
+
+  <title>Televisions - Search Results - Which?</title>
+</head>
+<body class="toggle-listing   search-results">
+<div class="page-container">
+
+  <div id="eprivacy" class="eprivacy banner group">
+  <div class="eprivacy-container">
+    <div class="left-column">
+      <div class="h4">Cookies on Which?</div>
+      <p>We place cookies on your computer to maximise your experience
+        on our websites and to help us make these websites better. If you
+        continue to use our websites we'll assume that you are happy with
+        this. You can change your cookie settings at any time.</p>
+    </div>
+    <div class="right-column">
+      <p>
+        <a href="#" class="button button-simple-a" id="eprivacy-submit">Accept</a>
+        <a href="http://www.which.co.uk/privacy-policy/cookie-policy/"
+          class="more">Find out more <span class="icon icon-right big"></span></a>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+  <div class="global-nav">
+  <div class="nav-bar">
+    <div class="nav-left">
+			<a href="http://www.which.co.uk" id="which-logo"><div class="button logo-button sub"></div></a>
+    </div>
+    <div class="nav-right">
+
+			<a class="nav-links" href="http://www.which.co.uk/sitemap/#reviews"><div id="reviews-button" class="button quicklink-button switch-a"><div class="button-label">REVIEWS<span class="more-less icon-more"></span></div></div></a>
+			<a class="nav-links" href="http://www.which.co.uk/sitemap/#campaigns"><div id="campaigns-button" class="button quicklink-button switch-a"><div class="button-label">CAMPAIGNS<span class="more-less icon-more"></span></div></div></a>
+			<a class="nav-links" href="http://www.which.co.uk/sitemap/#services"><div id="services-button" class="button quicklink-button switch-a"><div class="button-label">SERVICES<span class="more-less icon-more"></span></div></div></a>
+			<a class="nav-links" href="http://www.which.co.uk/sitemap/#about-us"><div id="about-us-button" class="button quicklink-button switch-a"><div class="button-label">ABOUT US<span class="more-less icon-more"></span></div></div></a>
+
+			<div id="menu-button" class="button show-menu switch-b"><div class="button-label"><span class="icon-list"></span></div></div>
+
+			<a class="nav-links" href="/reviews/televisions">
+				<div id="search-button" class="button show-search">
+					<div class="button-label">
+						<span class="icon-search"></span>
+					</div>
+				</div>
+			</a>
+
+				<div class="signin-signup-wrapper">
+					<a href="https://www.which.co.uk/login#?intcmp=GNH-Login">
+						<div class="button show-signin">
+							<span class="icon-user"></span>
+							<span class="login-label">LOG IN</span>
+						</div>
+					</a>
+					<a href="https://www.which.co.uk/signup#?intcmp=GNH-Signup">
+						<div class="button show-signup">
+							<div class="button-label">SIGN UP</div>
+						</div>
+					</a>
+				</div>
+
+		</div>
+  </div>
+
+
+	<div class="search-bar">
+		<div class="search-inner">
+			<form method="get" action="http://search.which.co.uk/search" id="global-search">
+				<input type="text" class="search-box" name="w" value="" id="sli_search_1" placeholder="Search all of Which?" autocomplete="off">
+				<input type="hidden" name="asug" />
+				<input type="hidden" name="mainresult" value="mainresult:yes" />
+				<input type="hidden" name="intcmp" value="GNH-Search" />
+				<input type="submit" value="&#x27B2;" class="search-button">
+			</form>
+		</div>
+	</div>
+
+	<div class="quicklinks"> 
+
+<!-- ======== REVIEWS TAB - START ======= --> 
+<div class="quicklink"> <div class="column oneofthree mob-button"> <h2 class="highlight-a main-link-button">Reviews<span class="icon-more"></span></h2> <div class="description">Free, unbiased advice on buying and choosing the right product for you - plus members can see a full breakdown of test scores and the latest Best Buys and Don't Buys too.</div> </div> <div class="column twoofthree main-links"> <ul> 
+
+<!-- ======== REVIEWS TAB - TECHNOLOGY ======== --> <li class="link-set fixed"> <h3><a href="http://www.which.co.uk/technology/#?intcmp=GNH.Reviews.Technology">Technology <span class="icon- right"></span></a></h3> <div> <ul> <li><a href=" http://www.which.co.uk/tv-and-home-entertainment#?intcmp=GNH.Reviews.Technology.Tv-And-Home- Entertainment">TV &amp; home entertainment </a></li> <li><a href="http://www.which.co.uk/technology/computing/#? intcmp=GNH.Reviews.Technology.Computing">Computing</a></li> <li><a href="http://www.which.co.uk/technology/photography/#? intcmp=GNH.Reviews.Technology.Photography">Photography</a></li> <li><a href="http://www.which.co.uk/technology/camcorders/reviews/hd-camcorders/#? intcmp=GNH.Reviews.Technology.Camcorders">Camcorders</a></li> <li><a href="http://www.which.co.uk/technology/audio/#?intcmp=GNH.Reviews.Technology.Audio">Audio</a></li>
+<li><a href="http://www.which.co.uk/technology/phones/#?intcmp=GNH.Reviews.Technology.Phones">Phones</a></li> <li><a href="http://www.which.co.uk/technology/software/#? intcmp=GNH.Reviews.Technology.Software">Software</a></li> <li><a href="http://www.which.co.uk/technology/broadband-tv-and-phone/#? intcmp=GNH.Reviews.Technology.Broadband-Tv-And-Phone">Broadband, TV and phone</a></li> <li><a href="http://blogs.which.co.uk/technology/#?intcmp= GNH.Reviews.Technology.Tech-Daily">Tech Daily</a></li> </ul> </div> </li> 
+
+<!-- ======== REVIEWS TAB - HOME & GARDEN ======== --> <li class="link-set fixed"> <h3><a href="http://www.which.co.uk/home-and-garden/#?intcmp=GNH.Reviews.Home-And-Garden">Home &amp; Garden <span class="icon-right"></span></a></h3> <div> <ul> <li><a href="http://www.which.co.uk/home-and-garden/home-appliances/#?intcmp=GNH.Reviews.Home-And- Garden.Home-Appliances">Home appliances</a></li> <li><a href="http://www.which.co.uk/home-and-garden/small-appliances/#?intcmp=GNH.Reviews.Home-And- Garden.Small-Appliances">Small appliances</a></li> <li><a href="http://www.which.co.uk/home-and-garden/heating-water-and-electricity/#?intcmp=GNH.Reviews.Home- And-Garden.Heating-Water-And-Electricity">Heating, water &amp electricity</a></li> <li><a href="http://www.which.co.uk/home-and-garden/bathroom-and-personal-care/#?intcmp=GNH.Reviews.Home-And- Garden.Bathroom-And-Personal-Care">Bathroom &amp personal care</a></li> <li><a href="http://www.which.co.uk/home-and-garden/garden/#?intcmp=GNH.Reviews.Home-And- Garden.Garden">Garden</a></li> <li><a href="http://www.which.co.uk/home-and-garden/home-improvements/#?intcmp=GNH.Reviews.Home-And- Garden.Home-Improvements">Home improvements</a></li> <li><a href="http://www.which.co.uk/home-and-garden/leisure/#?intcmp=GNH.Reviews.Home-And- Garden.Leisure">Leisure</a></li> <li><a href="http://local.which.co.uk/#?intcmp=GNH.Reviews.Home-And-Garden.Which-Local">Which? Local</a></li> <li><a href="http://www.which.co.uk/home-and-garden/staying-independent-at-home/#?intcmp=GNH.Reviews.Home-And-Garden.Staying-independent-at-home">Staying independent at home</a></li> </ul> </div> </li> 
+
+<!-- ======== REVIEWS TAB - CARS ======== --> <li class="link-set fixed"> <h3><a href="http://www.which.co.uk/cars/#?intcmp=GNH.Reviews.Cars">Cars <span class="icon- right"></span></a></h3> <div> <ul> <li><a href="http://www.which.co.uk/cars/reviews/#?intcmp=GNH.Reviews.Cars.Car-Reviews">Car reviews</a></li> <li><a href="http://www.which.co.uk/cars/driving">Driving your car</a></li> <li><a href="http://www.which.co.uk/cars/choosing-a-car/#?intcmp=GNH.Reviews.Cars.Choosing-A-Car">Choosing a car</a></li> <li><a href="http://www.which.co.uk/cars/survey/which-car-survey-2011/which-car-survey-2014/">Car Survey 2014</a></li> </ul> </div> </li> 
+
+<!-- ======== REVIEWS TAB - MONEY ======== --> <li class="link-set fixed"> <h3><a href="http://www.which.co.uk/money/#?intcmp=GNH.Reviews.Money">Money <span class="icon- right"></span></a></h3> <div> <ul> <li><a 
+href="http://www.which.co.uk/money/savings-and-investments/#?intcmp=GNH.Reviews.Money.Savings-And- Investments">Savings &amp; investments</a></li> <li><a href="http://www.which.co.uk/money/credit-cards-and-loans/#?intcmp=GNH.Reviews.Money.Credit-Cards-And- Loans">Credit cards &amp; loans</a></li> <li><a href="http://www.which.co.uk/money/retirement/#? intcmp=GNH.Reviews.Money.Retirement">Retirement</a></li> <li><a 
+href="http://www.which.co.uk/money/money-saving-tips/#?intcmp=GNH.Reviews.Money.Money-saving-tips">Money-saving tips</a></li> <li><a 
+href="http://www.which.co.uk/money/insurance/#?intcmp=GNH.Reviews.Money.Insurance">Insurance</a></li> <li><a 
+href="http://www.which.co.uk/money/mortgages-and-property/#?intcmp=GNH.Reviews.Money.Mortgages-And- Property">Mortgages &amp; property</a></li> <li><a 
+href="http://www.which.co.uk/money/bank-accounts/#?intcmp=GNH.Reviews.Money.Bank-Accounts">Bank accounts</a></li> <li><a 
+href="http://www.which.co.uk/money/tax/#?intcmp=GNH.Reviews.Money.Tax">Tax</a>
+</li> </ul> </div> </li> 
+
+<!-- ======== REVIEWS TAB - BABY & CHILD ======== --> <li class="link-set fixed"> <h3><a href="http://www.which.co.uk/baby-and-child/#?intcmp=GNH.Reviews.Baby-And-Child">Baby &amp; Child <span class="icon-right"></span></a></h3> <div> <ul> <li><a href="http://www.which.co.uk/baby-and-child/baby-transport/#?intcmp=GNH.Reviews.Baby-And-Child.Baby- Transport">Baby transport</a></li> <li><a href="http://www.which.co.uk/baby-and-child/nursery-and-feeding/#?intcmp=GNH.Reviews.Baby-And- Child.Nursery-And-Feeding">Nursery &amp; feeding</a></li> <li><a href="http://www.which.co.uk/baby-and-child/child-safety-at-home/#?intcmp=GNH.Reviews.Baby-And- Child.Child-Safety-At-Home">Child safety at home</a></li> <li><a href="http://www.which.co.uk/baby-and-child/shopping-and-family-finances/#?intcmp=GNH.Reviews.Baby- And-Child.Shopping-and-Family-Finances">Shopping & family finances</a></li> </ul> </div> </li> 
+
+<!-- ======== REVIEWS TAB - ENERGY ======== --> <li class="link-set fixed"> <h3><a href="http://www.which.co.uk/energy/#?intcmp=GNH.Reviews.Energy">Energy <span class="icon- right"></span></a></h3> <div> <ul> <li><a href="http://www.which.co.uk/energy/saving-money/#?intcmp=GNH.Reviews.Energy.Saving-Money">Saving money</a></li> <li><a href="http://www.which.co.uk/energy/energy-saving-products/#?intcmp=GNH.Reviews.Energy.Energy-Saving- Products">Energy saving products</a></li> <li><a href="http://www.which.co.uk/energy/creating-an-energy-saving-home/#?intcmp=GNH.Reviews.Energy.Creating-An-Energy-Saving-Home">Creating an energy saving home</a></li> <li><a href="http://switch.which.co.uk/#?intcmp=GNH.Reviews.Energy.Which-Switch">Which? Switch</a></li> </ul> </div> </li> </ul> </div> </div> 
+<!-- ======== REVIEWS TAB - FINISH ======== --> 
+
+<!-- ====================================== --> <!-- ====================================== --> <!-- ====================================== --> <!-- ====================================== --> <!-- ====================================== --> <!-- ====================================== --> 
+
+<!-- ======== CAMPAIGNS TAB - START ======== --> <div class="quicklink"> <div class="column oneofthree mob-button"> <h2 class="highlight-a main-link-button">Campaigns <span class="icon-more"></span></h2> <div class="description"> We campaign to make people's lives simpler and fairer. Let's make change happen.</div> </div> <div class="column twoofthree main-links"> <ul> 
+
+<!-- ======== CAMPAIGNS TAB - CAMPAIGNS ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/campaigns/#?intcmp= GNH.Campaigns.Campaigns">Campaigns <span class="icon- right"></span></a></h3> <div> <ul> <li>Get involved in our latest campaigns and find out how to take action.</li> </ul> </div> </li> 
+
+<!-- ======== CAMPAIGNS TAB – DODGY DELIVERIES ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/campaigns/dodgy-deliveries/#?intcmp=GNH.Campaigns.Dodgy-deliveries">Dodgy deliveries <span class="icon-right"></span></a></h3> <div> <ul> <li> Are you experiencing difficulties getting online orders delivered? Sign our petition to stamp out dodgy deliveries.</li> </ul> </div> </li> 
+
+<!-- ======== CAMPAIGNS TAB – FAIR ENERGY PRICES ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/campaigns/fair-energy-prices/#?intcmp=GNH.Campaigns.Fair-energy-prices">Fair energy prices <span class="icon-right"></span></a></h3> <div> <ul> <li> Do you think you pay a fair price for your energy? If in doubt, sign our petition. </li> </ul> </div> </li> 
+
+<!-- ======== CAMPAIGNS TAB – SNEAKY FEES ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/campaigns/insurance-bank-card-fees/#?intcmp=GNH.Campaigns.Sneaky-Fees">Sneaky fees <span class="icon-right"></span></a></h3> <div> <ul> <li> Do you feel tricked by sneaky fees and charges? Sign our petition and help us put a stop to the practice.</li> </ul> </div> </li> 
+
+<!-- ======== CAMPAIGNS TAB – SAVINGS RATES ======== --> <li class="link-set"> <h3><a href=" http://www.which.co.uk/campaigns/savings-rates/#?intcmp=GNH.Campaigns.Savings-Rates ">Savings rates <span class="icon-right"></span></a></h3> <div> <ul> <li> Are you tired of sub-standard savings accounts? Free your savings from the savings trap.</li> </ul> </div> </li> 
+
+<!-- ======== CAMPAIGNS TAB – NUISANCE CALLS AND TEXTS ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/campaigns/nuisance-calls-and-texts/#?intcmp=GNH.Campaigns.Nuisance-Calls-and-Texts">Nuisance calls and texts <span class="icon-right"></span></a></h3> <div> <ul> <li> Plagued by nuisance calls and texts? Use our tool to report the culprits. </li> </ul> </div> </li> 
+
+<!-- ======== CAMPAIGNS TAB – BROADBAND SPEED ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/campaigns/broadband-speed-service/#?intcmp=GNH.Campaigns.Broadband-Speed">Broadband Speed <span class="icon-right"></span></a></h3> <div> <ul> <li> We're calling on broadband providers to improve service and make speed guaranteed.</li> </ul> </div> </li> 
+
+<!-- ======== CAMPAIGNS TAB – UNLOCK MOBILE PHONES ======== --> <li class="link-set"> <h3><a href=" http://www.which.co.uk/campaigns/mobile-phone-deals/#?intcmp=GNH.Campaigns.Mobile-Phones ">Unlock mobile phones <span class="icon-right"></span></a></h3> <div> <ul> <li> Trapped in a poor value mobile phone contract? Sign our petition to unlock better deals.</li> </ul> </div> </li> 
+
+<!-- ======== CAMPAIGNS TAB – PUBLIC SERVICE COMPLAINTS ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/campaigns/schools-doctors-hospitals/#?intcmp=GNH.Campaigns.Public-Service-Complaints">Public Service Complaints <span class="icon-right"></span></a></h3> <div> <ul> <li> Ever feel like your complaints to GPs or care homes are being ignored?</li> </ul> </div> </li> 
+
+<!-- ======== CAMPAIGNS TAB - CONSUMER RIGHTS ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/consumer-rights/#?intcmp=GNH.Campaigns.Consumer-Rights">Consumer Rights <span class="icon-right"></span></a></h3> <div> <ul> <li>An expert guide to your consumer rights with free tools and advice for what to do if things go wrong.</li> </ul> </div> </li> 
+
+<!-- ======== CAMPAIGNS TAB - WHICH? POLICY ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/about-which/who-we-are/which-policy/#?intcmp=GNH.Campaigns.Which- Policy">Which? Policy <span class="icon-right"></span></a></h3> <div> <ul> <li>Find out about the policy which underpins the work we do to campaign for consumers.</li> </ul> </div> </li> 
+
+<!-- ======== CAMPAIGNS TAB - WHICH? CONVERSATION ======== --> <li class="link-set"> <h3><a href="http://conversation.which.co.uk/#?intcmp=GNH.Campaigns.Conversation">Which? Conversation <span class="icon-right"></span></a></h3> <div> <ul> <li>A community website to share your views on the consumer issues of the day.</li> </ul> </div> </li> </ul> </div> </div> 
+
+<!-- ======== CAMPAIGNS TAB - FINISH ======== --> 
+
+<!-- ====================================== --> <!-- ====================================== --> <!-- ====================================== --> <!-- ====================================== --> <!-- ====================================== --> <!-- ====================================== --> 
+
+<!-- ======== SERVICES TAB - START ======== --> <div class="quicklink"> <div class="column oneofthree mob-button"> <h2 class="highlight-a main-link-button">Services<span class="icon-more"></span></h2> <div class="description"> Get tailored one-to-one advice from our range of legal, financial, travel and technology experts to help you make the right decisions.</div> </div> <div class="column twoofthree main-links"> <ul> 
+
+<!-- ======== SERVICES TAB - MORTGAGE ADVISERS ======== --> <li class="link-set"> <h3><a href="http://mortgageadvisers.which.co.uk/#?intcmp=GNH.Services.Mortgage-Advisers">Mortgage Advisers <span class="icon-right"></span></a></h3> <div> <ul> <li> Our impartial advisers look at every mortgage from every available lender to help you find the right mortgage.</li> </ul> </div> </li> 
+
+<!-- ======== SERVICES TAB - LEGAL SERVICE ======== --> <li class="link-set"> <h3><a href="http://legalservice.which.co.uk/#?intcmp=GNH.Services.Legal-Service">Legal Service <span class="icon-right"></span></a></h3> <div> <ul> <li> Subscribe to Which? Legal Service to get simple and affordable legal advice from our expert lawyers.</li> </ul> </div> </li> 
+
+<!-- ======== SERVICES TAB - WILLS ======== --> <li class="link-set"> <h3><a href="http://www.wills.which.co.uk/#?intcmp=GNH.Services.Which-Wills">Wills <span class="icon- right"></span></a></h3> <div> <ul> <li> Writing an online will with Which? Wills is an easy, affordable and efficient solution.</li> </ul> </div> </li> 
+
+<!-- ======== SERVICES TAB - CONSUMER RIGHTS ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/consumer-rights/#?intcmp=GNH.Services.Consumer-Rights">Consumer Rights <span class="icon-right"></span></a></h3> <div> <ul> <li>An expert guide to your consumer rights with free tools and advice for what to do if things go wrong.</li> </ul> </div> </li> 
+
+<!-- ======== SERVICES TAB - WHICH? LOCAL ======== --> <li class="link-set"> <h3><a href="http://local.which.co.uk/#?intcmp=GNH.Services.Which-Local">Which? Local <span class="icon- right"></span></a></h3> <div> <ul> <li> Find reliable traders from thousands of local business reviews by Which? members across the UK.</li> </ul> </div> </li> 
+
+<!-- ======== SERVICES TAB - WHICH? SWITCH ======== --> <li class="link-set"> <h3><a href="http://switch.which.co.uk/#?intcmp=GNH.Services.Which-Switch">Which? Switch <span class="icon-right"></span></a></h3> <div> <ul> <li> Save money by comparing and switching your gas and electricity supplier using our free independent service.</li> </ul> </div> </li> 
+
+<!-- ======== SERVICES TAB - WHICH? UNIVERSITY ======== --> <li class="link-set"> <h3><a href="http://university.which.co.uk/#?intcmp=GNH.Services.Which-University">Which? University <span class="icon-right"></span></a></h3> <div> <ul> <li>Our free tool helps you choose what to study, where to go and how to get there.</li> </ul> </div> </li> 
+
+<!-- ======== SERVICES TAB - WHICH? BIRTH CHOICE ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/birth-choice#?intcmp=GNH.Services.Which-Birth-Choice">Which? Birth Choice <span class="icon- right"></span></a></h3> <div> <ul> <li>Find and compare local maternity services with our free service to help you choose where to give birth.</li> </ul> </div> </li> 
+
+<!-- ======== SERVICES TAB - WHICH? TRUSTED TRADERS ======== --> <li class="link-set"> <h3><a href="http://trustedtraders.which.co.uk/#?intcmp=GNH.Services.Which-Trusted.Traders">Which? Trusted Traders <span class="icon-right"></span></a></h3> <div> <ul> <li>An endorsement scheme helping consumers find reputable traders in the home improvement and motoring sectors</li> </ul> </div> </li> 
+
+<!-- ======== SERVICES TAB - WHICH? ELDERLY CARE ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/elderly-care#?intcmp=GNH.Services.Which-Elderly-Care">Which? Elderly Care <span class="icon- right"></span></a></h3> <div> <ul> <li>Find free, independent and practical advice about caring for older people across the UK</li> </ul> </div> </li> 
+
+<!-- ======== SERVICES TAB - WHICH? MONEY COMPARE ======== --> <li class="link-set"> <h3><a href="http://moneycompare.which.co.uk/#?intcmp=GNH.Services.Which-Money-Compare">Which? Money Compare <span class="icon- right"></span></a></h3> <div> <ul> <li>Compare credit cards, mortgages, savings and ISAs with the Which? Money comparison site.</li> </ul> </div> </li> </ul> </div> </div> 
+
+<!-- ======== SERVICES TAB - FINISH ======== --> 
+
+<!-- ====================================== --> <!-- ====================================== --> <!-- ====================================== --> <!-- ====================================== --> <!-- ====================================== --> <!-- ====================================== --> 
+
+<!-- ======== ABOUT US TAB - START ======== --> <div class="quicklink"> <div class="column oneofthree mob-button"> <h2 class="highlight-a main-link-button">About us<span class="more-less icon-more"></span></h2> <div class="description"> Which? exists to make people as powerful as the organisations that affect their lives. We don't accept any advertising, freebies or sponsorship. All our research and campaigning is completely independent and funded by subscriptions.</div> </div> <div class="column twoofthree main-links"> <ul> 
+
+<!-- ======== ABOUT US TAB - ABOUT WHICH? ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/about-which/#?intcmp=GNH.About-Us.About-Which">About Which? <span class="icon-right"></span></a></h3> <div> <ul> <li>Find out more about what we do and how we work, including more about the Which? Council.</li> </ul> </div> </li> 
+
+<!-- ======== ABOUT US TAB - BECOME A MEMBER ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/about-which/what-we-offer/what-do-i-get-when-i-take-a-trial/#? intcmp=GNH.About-Us.Signup">Become a Member <span class="icon-right"></span></a></h3> <div> <ul> <li>Discover the benefits of Which?. Find out more about what your subscription includes and take a trial.</li> </ul> </div> </li> 
+
+<!-- ======== ABOUT US TAB - WHICH? POLICY ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/about-which/who-we-are/which-policy/#?intcmp=GNH.About-Us.Which- Policy">Which? Policy <span class="icon-right"></span></a></h3> <div> <ul> <li>Find out about the policy which underpins the work we do to campaign for consumers.</li> </ul> </div> </li> 
+
+<!-- ======== ABOUT US TAB - CONTACT US ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/about-which/contact-us/#?intcmp=GNH.About-Us.Contact-Us">Contact us <span class="icon-right"></span></a></h3> <div> <ul> <li>Whether you're new to us or a longstanding member, there are several ways to get in touch.</li> </ul> </div> </li> 
+
+<!-- ======== ABOUT US TAB - HELP ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/help/#?intcmp=GNH.About-Us.Help">Help <span class="icon- right"></span></a></h3> <div> <ul> <li>FAQs on subjects including using which.co.uk and accessing your account.</li> </ul> </div> </li> 
+
+<!-- ======== ABOUT US TAB - PRESS OFFICE ======== --> <li class="link-set"> <h3><a href="http://press.which.co.uk/#?intcmp=GNH.About-Us.Press-Office">Press Office <span class="icon- right"></span></a></h3> <div> <ul> <li> Latest news releases and statements, information on spokespeople and contacts for journalists. </li> </ul> </div> </li> 
+
+<!-- ======== ABOUT US TAB - CAREERS ======== --> <li class="link-set"> <h3><a href="http://careersatwhich.co.uk/#?intcmp=GNH.About-Us.Careers">Careers <span class="icon- right"></span></a></h3> <div> <ul> <li> Find out more about working at Which? including latest vacancies and how to apply.</li> </ul> </div> </li> 
+
+<!-- ======== ABOUT US TAB - WHICH? DIRECTORY ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/sitemap/#?intcmp=GNH.About-Us.Sitemap">Which? Directory <span class="icon-right"></span></a></h3> <div> <ul> <li> Can't find what you're looking for? Access the complete A-Z directory of Which? Sites.</li> </ul> </div> </li> 
+
+<!-- ======== ABOUT US TAB - WHICH? NEWS ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/news/#?intcmp=GNH.About-Us.News">Which? News <span class="icon- right"></span></a></h3> <div> <ul> <li>Get the latest news on our research and the consumer issues that affect you.</li> </ul> </div> </li> 
+
+<!-- ======== ABOUT US TAB - MONEY HELPLINE ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/about-which/what-we-offer/which-money-helpline/#? intcmp=GNH.About-Us.Which-Money-Helpline">Money Helpline <span class="icon-right"></span></a></h3> <div> <ul> <li> Expert, unbiased information and guidance to help our members make the best financial decisions.</li> </ul> </div> </li> 
+
+<!-- ======== ABOUT US TAB - COMPUTING HELPDESK ======== --> <li class="link-set"> <h3><a href="http://www.which.co.uk/magazine/computing/#?intcmp=GNH.About-Us.Computing-Helpdesk">Computing Helpdesk <span class="icon-right"></span></a></h3> <div> <ul> <li> Jargon-free technical support and buying advice to help make sense of our members' computing issues. </li> </ul> </div> </li> </ul> </div> </div> 
+
+<!-- ======== ABOUT US TAB - FINISH ======== --> </div><!--end of quicklinks-->
+
+
+</div>
+
+	<div class="breadcrumbs-bar">
+  <div class="breadcrumbs-container">
+    <ul class="breadcrumbs">
+        <li class="breadcrumbs__item-container">
+          <a class="breadcrumbs__item" href="/tv-and-home-entertainment">
+            <span class="breadcrumbs__item-text is-icon"></span>
+            <span class="breadcrumbs__item-text is-text">TV &amp; HOME ENTERTAINMENT</span>
+</a>        </li>
+        <li class="breadcrumbs__item-container">
+        <span class="breadcrumbs__item">Televisions</span>
+        </li>
+    </ul>
+  </div>
+</div>
+
+  <div class="flip-container">
+  <div class="heading-container">
+  <div class="product-navigation desktop tablet">
+    <li class="product-navigation__list-item
+  active">
+  <a class="product-navigation__link" href="/reviews/televisions">
+    <span class="product-navigation__border-container">
+      <span class="product-navigation__link-label">
+        All televisions
+      </span>
+    </span>
+  </a>
+  </li>
+    <li class="product-navigation__list-item
+  ">
+  <a class="product-navigation__link" href="/reviews/televisions/article/recommendations/which-best-buy-televisions">
+    <span class="product-navigation__border-container">
+      <span class="product-navigation__link-label">
+        Best buys
+      </span>
+    </span>
+  </a>
+  </li>
+    <li class="product-navigation__list-item
+  ">
+  <a class="product-navigation__link" href="/reviews/televisions/article/advice/guides">
+    <span class="product-navigation__border-container">
+      <span class="product-navigation__link-label">
+        Advice guides
+      </span>
+    </span>
+  </a>
+  </li>
+</div>
+<div class="product-navigation__divider"></div>
+
+<div class="product-navigation mobile">
+  <div class="select-wrapper product-navigation-selector-wrapper">
+    <select id="product-navigation-selector" class="product-navigation-selector"
+      data-widget="productNavigation">
+        <option value="/reviews/televisions"
+      selected>
+      All televisions
+      </option>
+        <option value="/reviews/televisions/article/recommendations/which-best-buy-televisions"
+      >
+      Best buys
+      </option>
+        <option value="/reviews/televisions/article/advice/guides"
+      >
+      Advice guides
+      </option>
+    </select>
+  </div>
+</div>
+
+  <button type="button" class="action-refine button button-primary-small">Refine</button>
+  <h1 class="page-heading">
+    Showing
+    <em>
+      <span class="product-count">
+        756
+      </span>
+      Televisions 
+    </em>
+  </h1>
+  </div>
+  <div class="flipper closed">
+    <main class="front" data-widget="infiniteScroll">
+      <div class="main-inner">
+        <div class="container-paywall">
+          <script language="javascript">
+<!--
+if (window.adgroupid == undefined) {
+  window.adgroupid = Math.round(Math.random() * 1000);
+}
+document.write('<scr'+'ipt language="javascript1.1" src="http://adtech.which.co.uk/addyn|3.0|987.1|5137275|0|0|ADTECH;cookie=info;loc=100;target=_blank;grp=9'+window.adgroupid+';misc='+new Date().getTime()+';key=televisions+/reviews/televisions"></scri'+'pt>');
+//-->
+</script>
+
+<noscript><a href="http://adtech.which.co.uk/adlink|3.0|987.1|5137275|0|0|ADTECH;loc=300;alias=;cookie=info;" target="_blank" target="_blank"><img src="http://adtech.which.co.uk/adserv|3.0|987.1|5137275|0|0|ADTECH;loc=300;alias=;cookie=info;" border="0"></a></noscript>
+<!-- End of JavaScript Tag -->
+
+        </div>
+        <div class="product-gallery js-product-gallery">
+          <ul class="products" itemscope itemtype="http://schema.org/ItemList">
+            <meta itemprop="mainContentOfPage" content="true"/>
+              <li itemscope itemtype="http://schema.org/Product" itemprop="itemListElement">
+                <div itemscope itemtype="http://schema.org/Product" class="product-listing" data-product-id="samsung_ue32h5000">
+
+  <div class="product-listing__thumb">
+      <a href="/reviews/televisions/samsung--ue32h5000">
+        <img
+        class="product-listing__thumb-image"
+        alt="Samsung UE32H5000"
+        src="http://images.pricerunner.com/product/195x140/933316068/Samsung-UE32H5000.jpg"/>
+      </a>
+  </div>
+
+  <div class="product-listing__name-and-key-fact">
+      <a class="product-listing__name--narrow" href="/reviews/televisions/samsung--ue32h5000">
+        <span class="product-listing__manufacturer">Samsung</span>
+        <span class="product-listing__model">UE32H5000</span>
+      </a>
+      <div class="product-listing__key-fact">
+        32"
+      </div>
+  </div>
+
+    <div class="product-listing__price-and-badges--with-bottom">
+
+    <div class="product-listing__price " >
+      <span class="price-value">
+        &pound;219.00
+      </span>
+    </div>
+  </div>
+
+    <div class="product-listing__tested-date">
+      Tested date: Nov 2014
+    </div>
+
+
+    <div class="product-listing__compare-button">
+      <form accept-charset="UTF-8" action="/reviews/televisions/compare/samsung_ue32h5000" class="frm-comparison " data-location="listing" data-product-id="samsung_ue32h5000" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="d969D1YgAKDecpixhBuztUj8FDTM4fdlKdl+PxNc4f4=" /></div><button class="action-remove action-toggle" type="submit">Remove from compare</button>
+        <button class="action-add" type="submit">Add to compare</button></form>
+    </div>
+
+  </div>
+
+              </li>
+              <li itemscope itemtype="http://schema.org/Product" itemprop="itemListElement">
+                <div itemscope itemtype="http://schema.org/Product" class="product-listing" data-product-id="lg_28lb490u">
+
+  <div class="product-listing__thumb">
+      <a href="/reviews/televisions/lg--28lb490u">
+        <img
+        class="product-listing__thumb-image"
+        alt="LG 28LB490U"
+        src="http://images.pricerunner.com/product/195x140/951893231/LG-28LB490U.jpg"/>
+      </a>
+  </div>
+
+  <div class="product-listing__name-and-key-fact">
+      <a class="product-listing__name--narrow" href="/reviews/televisions/lg--28lb490u">
+        <span class="product-listing__manufacturer">LG</span>
+        <span class="product-listing__model">28LB490U</span>
+      </a>
+      <div class="product-listing__key-fact">
+        28"
+      </div>
+  </div>
+
+    <div class="product-listing__price-and-badges--with-bottom">
+
+    <div class="product-listing__price " >
+      <span class="price-value">
+        &pound;229.99
+      </span>
+    </div>
+  </div>
+
+    <div class="product-listing__tested-date">
+      Tested date: Nov 2014
+    </div>
+
+
+    <div class="product-listing__compare-button">
+      <form accept-charset="UTF-8" action="/reviews/televisions/compare/lg_28lb490u" class="frm-comparison " data-location="listing" data-product-id="lg_28lb490u" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="d969D1YgAKDecpixhBuztUj8FDTM4fdlKdl+PxNc4f4=" /></div><button class="action-remove action-toggle" type="submit">Remove from compare</button>
+        <button class="action-add" type="submit">Add to compare</button></form>
+    </div>
+
+  </div>
+
+              </li>
+              <li itemscope itemtype="http://schema.org/Product" itemprop="itemListElement">
+                <div itemscope itemtype="http://schema.org/Product" class="product-listing" data-product-id="samsung_ue40h6670">
+
+  <div class="product-listing__thumb">
+      <a href="/reviews/televisions/samsung--ue40h6670">
+        <img
+        class="product-listing__thumb-image"
+        alt="Samsung UE40H6670"
+        src="http://images.pricerunner.com/product/195x140/899139862/Samsung-UE40H6670.jpg"/>
+      </a>
+  </div>
+
+  <div class="product-listing__name-and-key-fact">
+      <a class="product-listing__name--narrow" href="/reviews/televisions/samsung--ue40h6670">
+        <span class="product-listing__manufacturer">Samsung</span>
+        <span class="product-listing__model">UE40H6670</span>
+      </a>
+      <div class="product-listing__key-fact">
+        40"
+      </div>
+  </div>
+
+    <div class="product-listing__price-and-badges--with-bottom">
+
+    <div class="product-listing__price " >
+      <span class="price-value">
+        &pound;529.00
+      </span>
+    </div>
+  </div>
+
+    <div class="product-listing__tested-date">
+      Tested date: Nov 2014
+    </div>
+
+
+    <div class="product-listing__compare-button">
+      <form accept-charset="UTF-8" action="/reviews/televisions/compare/samsung_ue40h6670" class="frm-comparison " data-location="listing" data-product-id="samsung_ue40h6670" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="d969D1YgAKDecpixhBuztUj8FDTM4fdlKdl+PxNc4f4=" /></div><button class="action-remove action-toggle" type="submit">Remove from compare</button>
+        <button class="action-add" type="submit">Add to compare</button></form>
+    </div>
+
+  </div>
+
+              </li>
+              <li itemscope itemtype="http://schema.org/Product" itemprop="itemListElement">
+                <div itemscope itemtype="http://schema.org/Product" class="product-listing" data-product-id="philips_32pht">
+
+  <div class="product-listing__thumb">
+      <a href="/reviews/televisions/philips--32pht">
+        <img
+        class="product-listing__thumb-image"
+        alt="Philips 32PHT4509"
+        src="http://resources.gfkms.com/images/ecxget.asp?url=/3/2CGU7HOGSPCOK2A/2CGU7HOGSPCOK2A-1856096.jpg"/>
+      </a>
+  </div>
+
+  <div class="product-listing__name-and-key-fact">
+      <a class="product-listing__name--narrow" href="/reviews/televisions/philips--32pht">
+        <span class="product-listing__manufacturer">Philips</span>
+        <span class="product-listing__model">32PHT4509</span>
+      </a>
+      <div class="product-listing__key-fact">
+        32"
+      </div>
+  </div>
+
+    <div class="product-listing__price-and-badges--with-bottom">
+
+    <div class="product-listing__price " >
+      <span class="price-value">
+        &pound;217.00
+      </span>
+    </div>
+  </div>
+
+    <div class="product-listing__tested-date">
+      Tested date: Nov 2014
+    </div>
+
+
+    <div class="product-listing__compare-button">
+      <form accept-charset="UTF-8" action="/reviews/televisions/compare/philips_32pht" class="frm-comparison " data-location="listing" data-product-id="philips_32pht" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="d969D1YgAKDecpixhBuztUj8FDTM4fdlKdl+PxNc4f4=" /></div><button class="action-remove action-toggle" type="submit">Remove from compare</button>
+        <button class="action-add" type="submit">Add to compare</button></form>
+    </div>
+
+  </div>
+
+              </li>
+              <li itemscope itemtype="http://schema.org/Product" itemprop="itemListElement">
+                <div itemscope itemtype="http://schema.org/Product" class="product-listing" data-product-id="samsung_lt19c300">
+
+  <div class="product-listing__thumb">
+      <a href="/reviews/televisions/samsung--lt19c300">
+        <img
+        class="product-listing__thumb-image"
+        alt="Samsung LT19C300"
+        src="http://www.staticwhich.co.uk/static/images/products/no-image/no-image-available.png"/>
+      </a>
+  </div>
+
+  <div class="product-listing__name-and-key-fact">
+      <a class="product-listing__name--narrow" href="/reviews/televisions/samsung--lt19c300">
+        <span class="product-listing__manufacturer">Samsung</span>
+        <span class="product-listing__model">LT19C300</span>
+      </a>
+      <div class="product-listing__key-fact">
+        19"
+      </div>
+  </div>
+
+    <div class="product-listing__price-and-badges--with-bottom">
+
+    <div class="product-listing__price product-listing__price--last-known " >
+      <span class="price-value">
+          Last known:
+        &pound;99.00
+      </span>
+    </div>
+  </div>
+
+    <div class="product-listing__tested-date">
+      Tested date: Nov 2014
+    </div>
+
+
+    <div class="product-listing__compare-button">
+      <form accept-charset="UTF-8" action="/reviews/televisions/compare/samsung_lt19c300" class="frm-comparison " data-location="listing" data-product-id="samsung_lt19c300" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="d969D1YgAKDecpixhBuztUj8FDTM4fdlKdl+PxNc4f4=" /></div><button class="action-remove action-toggle" type="submit">Remove from compare</button>
+        <button class="action-add" type="submit">Add to compare</button></form>
+    </div>
+
+  </div>
+
+              </li>
+              <li itemscope itemtype="http://schema.org/Product" itemprop="itemListElement">
+                <div itemscope itemtype="http://schema.org/Product" class="product-listing" data-product-id="philips_22pfh4109">
+
+  <div class="product-listing__thumb">
+      <a href="/reviews/televisions/philips--22pfh4109">
+        <img
+        class="product-listing__thumb-image"
+        alt="Philips 22PFH4109"
+        src="http://images.pricerunner.com/product/195x140/902627995/Philips-22PFH4109.jpg"/>
+      </a>
+  </div>
+
+  <div class="product-listing__name-and-key-fact">
+      <a class="product-listing__name--narrow" href="/reviews/televisions/philips--22pfh4109">
+        <span class="product-listing__manufacturer">Philips</span>
+        <span class="product-listing__model">22PFH4109</span>
+      </a>
+      <div class="product-listing__key-fact">
+        22"
+      </div>
+  </div>
+
+    <div class="product-listing__price-and-badges--with-bottom">
+
+    <div class="product-listing__price " >
+      <span class="price-value">
+        &pound;129.95
+      </span>
+    </div>
+  </div>
+
+    <div class="product-listing__tested-date">
+      Tested date: Nov 2014
+    </div>
+
+
+    <div class="product-listing__compare-button">
+      <form accept-charset="UTF-8" action="/reviews/televisions/compare/philips_22pfh4109" class="frm-comparison " data-location="listing" data-product-id="philips_22pfh4109" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="d969D1YgAKDecpixhBuztUj8FDTM4fdlKdl+PxNc4f4=" /></div><button class="action-remove action-toggle" type="submit">Remove from compare</button>
+        <button class="action-add" type="submit">Add to compare</button></form>
+    </div>
+
+  </div>
+
+              </li>
+              <li itemscope itemtype="http://schema.org/Product" itemprop="itemListElement">
+                <div itemscope itemtype="http://schema.org/Product" class="product-listing" data-product-id="toshiba_42l6453d">
+
+  <div class="product-listing__thumb">
+      <a href="/reviews/televisions/toshiba--42l6453d">
+        <img
+        class="product-listing__thumb-image"
+        alt="Toshiba 42L6453DB"
+        src="http://images.pricerunner.com/product/195x140/1207119696/Toshiba-42L6453DB.jpg"/>
+      </a>
+  </div>
+
+  <div class="product-listing__name-and-key-fact">
+      <a class="product-listing__name--narrow" href="/reviews/televisions/toshiba--42l6453d">
+        <span class="product-listing__manufacturer">Toshiba</span>
+        <span class="product-listing__model">42L6453DB</span>
+      </a>
+      <div class="product-listing__key-fact">
+        42"
+      </div>
+  </div>
+
+    <div class="product-listing__price-and-badges--with-bottom">
+
+    <div class="product-listing__price " >
+      <span class="price-value">
+        &pound;379.00
+      </span>
+    </div>
+  </div>
+
+    <div class="product-listing__tested-date">
+      Tested date: Nov 2014
+    </div>
+
+
+    <div class="product-listing__compare-button">
+      <form accept-charset="UTF-8" action="/reviews/televisions/compare/toshiba_42l6453d" class="frm-comparison " data-location="listing" data-product-id="toshiba_42l6453d" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="d969D1YgAKDecpixhBuztUj8FDTM4fdlKdl+PxNc4f4=" /></div><button class="action-remove action-toggle" type="submit">Remove from compare</button>
+        <button class="action-add" type="submit">Add to compare</button></form>
+    </div>
+
+  </div>
+
+              </li>
+              <li itemscope itemtype="http://schema.org/Product" itemprop="itemListElement">
+                <div itemscope itemtype="http://schema.org/Product" class="product-listing" data-product-id="philips_40pft">
+
+  <div class="product-listing__thumb">
+      <a href="/reviews/televisions/philips--40pft">
+        <img
+        class="product-listing__thumb-image"
+        alt="Philips 40PFT4509"
+        src="http://images.pricerunner.com/product/195x140/956338350/Philips-40PFT4509.jpg"/>
+      </a>
+  </div>
+
+  <div class="product-listing__name-and-key-fact">
+      <a class="product-listing__name--narrow" href="/reviews/televisions/philips--40pft">
+        <span class="product-listing__manufacturer">Philips</span>
+        <span class="product-listing__model">40PFT4509</span>
+      </a>
+      <div class="product-listing__key-fact">
+        40"
+      </div>
+  </div>
+
+    <div class="product-listing__price-and-badges--with-bottom">
+
+    <div class="product-listing__price " >
+      <span class="price-value">
+        &pound;429.00
+      </span>
+    </div>
+  </div>
+
+    <div class="product-listing__tested-date">
+      Tested date: Nov 2014
+    </div>
+
+
+    <div class="product-listing__compare-button">
+      <form accept-charset="UTF-8" action="/reviews/televisions/compare/philips_40pft" class="frm-comparison " data-location="listing" data-product-id="philips_40pft" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="d969D1YgAKDecpixhBuztUj8FDTM4fdlKdl+PxNc4f4=" /></div><button class="action-remove action-toggle" type="submit">Remove from compare</button>
+        <button class="action-add" type="submit">Add to compare</button></form>
+    </div>
+
+  </div>
+
+              </li>
+              <li itemscope itemtype="http://schema.org/Product" itemprop="itemListElement">
+                <div itemscope itemtype="http://schema.org/Product" class="product-listing" data-product-id="logik_l22fe14">
+
+  <div class="product-listing__thumb">
+      <a href="/reviews/televisions/logik--l22fe14">
+        <img
+        class="product-listing__thumb-image"
+        alt="Logik L22FE14"
+        src="http://images.pricerunner.com/product/195x140/969094702/Logik-L22FE14.jpg"/>
+      </a>
+  </div>
+
+  <div class="product-listing__name-and-key-fact">
+      <a class="product-listing__name--narrow" href="/reviews/televisions/logik--l22fe14">
+        <span class="product-listing__manufacturer">Logik</span>
+        <span class="product-listing__model">L22FE14</span>
+      </a>
+      <div class="product-listing__key-fact">
+        22"
+      </div>
+  </div>
+
+    <div class="product-listing__price-and-badges--with-bottom">
+
+    <div class="product-listing__price " >
+      <span class="price-value">
+        &pound;109.99
+      </span>
+    </div>
+  </div>
+
+    <div class="product-listing__tested-date">
+      Tested date: Nov 2014
+    </div>
+
+
+    <div class="product-listing__compare-button">
+      <form accept-charset="UTF-8" action="/reviews/televisions/compare/logik_l22fe14" class="frm-comparison " data-location="listing" data-product-id="logik_l22fe14" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="_method" type="hidden" value="put" /><input name="authenticity_token" type="hidden" value="d969D1YgAKDecpixhBuztUj8FDTM4fdlKdl+PxNc4f4=" /></div><button class="action-remove action-toggle" type="submit">Remove from compare</button>
+        <button class="action-add" type="submit">Add to compare</button></form>
+    </div>
+
+  </div>
+
+              </li>
+          </ul>
+        </div>
+          <div class="pagination">
+              <a class="active" data-page="1" href="?page=1">Page 1</a>
+              <a class="" data-page="2" href="?page=2">Page 2</a>
+              <a class="" data-page="3" href="?page=3">Page 3</a>
+              <a class="" data-page="4" href="?page=4">Page 4</a>
+              <a class="" data-page="5" href="?page=5">Page 5</a>
+              <a class="" data-page="6" href="?page=6">Page 6</a>
+              <a class="" data-page="7" href="?page=7">Page 7</a>
+              <a class="" data-page="8" href="?page=8">Page 8</a>
+              <a class="" data-page="9" href="?page=9">Page 9</a>
+              <a class="" data-page="10" href="?page=10">Page 10</a>
+              <a class="" data-page="11" href="?page=11">Page 11</a>
+              <a class="" data-page="12" href="?page=12">Page 12</a>
+              <a class="" data-page="13" href="?page=13">Page 13</a>
+              <a class="" data-page="14" href="?page=14">Page 14</a>
+              <a class="" data-page="15" href="?page=15">Page 15</a>
+              <a class="" data-page="16" href="?page=16">Page 16</a>
+              <a class="" data-page="17" href="?page=17">Page 17</a>
+              <a class="" data-page="18" href="?page=18">Page 18</a>
+              <a class="" data-page="19" href="?page=19">Page 19</a>
+              <a class="" data-page="20" href="?page=20">Page 20</a>
+              <a class="" data-page="21" href="?page=21">Page 21</a>
+              <a class="" data-page="22" href="?page=22">Page 22</a>
+              <a class="" data-page="23" href="?page=23">Page 23</a>
+              <a class="" data-page="24" href="?page=24">Page 24</a>
+              <a class="" data-page="25" href="?page=25">Page 25</a>
+              <a class="" data-page="26" href="?page=26">Page 26</a>
+              <a class="" data-page="27" href="?page=27">Page 27</a>
+              <a class="" data-page="28" href="?page=28">Page 28</a>
+              <a class="" data-page="29" href="?page=29">Page 29</a>
+              <a class="" data-page="30" href="?page=30">Page 30</a>
+              <a class="" data-page="31" href="?page=31">Page 31</a>
+              <a class="" data-page="32" href="?page=32">Page 32</a>
+              <a class="" data-page="33" href="?page=33">Page 33</a>
+              <a class="" data-page="34" href="?page=34">Page 34</a>
+              <a class="" data-page="35" href="?page=35">Page 35</a>
+              <a class="" data-page="36" href="?page=36">Page 36</a>
+              <a class="" data-page="37" href="?page=37">Page 37</a>
+              <a class="" data-page="38" href="?page=38">Page 38</a>
+              <a class="" data-page="39" href="?page=39">Page 39</a>
+              <a class="" data-page="40" href="?page=40">Page 40</a>
+              <a class="" data-page="41" href="?page=41">Page 41</a>
+              <a class="" data-page="42" href="?page=42">Page 42</a>
+              <a class="" data-page="43" href="?page=43">Page 43</a>
+              <a class="" data-page="44" href="?page=44">Page 44</a>
+              <a class="" data-page="45" href="?page=45">Page 45</a>
+              <a class="" data-page="46" href="?page=46">Page 46</a>
+              <a class="" data-page="47" href="?page=47">Page 47</a>
+              <a class="" data-page="48" href="?page=48">Page 48</a>
+              <a class="" data-page="49" href="?page=49">Page 49</a>
+              <a class="" data-page="50" href="?page=50">Page 50</a>
+              <a class="" data-page="51" href="?page=51">Page 51</a>
+              <a class="" data-page="52" href="?page=52">Page 52</a>
+              <a class="" data-page="53" href="?page=53">Page 53</a>
+              <a class="" data-page="54" href="?page=54">Page 54</a>
+              <a class="" data-page="55" href="?page=55">Page 55</a>
+              <a class="" data-page="56" href="?page=56">Page 56</a>
+              <a class="" data-page="57" href="?page=57">Page 57</a>
+              <a class="" data-page="58" href="?page=58">Page 58</a>
+              <a class="" data-page="59" href="?page=59">Page 59</a>
+              <a class="" data-page="60" href="?page=60">Page 60</a>
+              <a class="" data-page="61" href="?page=61">Page 61</a>
+              <a class="" data-page="62" href="?page=62">Page 62</a>
+              <a class="" data-page="63" href="?page=63">Page 63</a>
+              <a class="" data-page="64" href="?page=64">Page 64</a>
+              <a class="" data-page="65" href="?page=65">Page 65</a>
+              <a class="" data-page="66" href="?page=66">Page 66</a>
+              <a class="" data-page="67" href="?page=67">Page 67</a>
+              <a class="" data-page="68" href="?page=68">Page 68</a>
+              <a class="" data-page="69" href="?page=69">Page 69</a>
+              <a class="" data-page="70" href="?page=70">Page 70</a>
+              <a class="" data-page="71" href="?page=71">Page 71</a>
+              <a class="" data-page="72" href="?page=72">Page 72</a>
+              <a class="" data-page="73" href="?page=73">Page 73</a>
+              <a class="" data-page="74" href="?page=74">Page 74</a>
+              <a class="" data-page="75" href="?page=75">Page 75</a>
+              <a class="" data-page="76" href="?page=76">Page 76</a>
+              <a class="" data-page="77" href="?page=77">Page 77</a>
+              <a class="" data-page="78" href="?page=78">Page 78</a>
+              <a class="" data-page="79" href="?page=79">Page 79</a>
+              <a class="" data-page="80" href="?page=80">Page 80</a>
+              <a class="" data-page="81" href="?page=81">Page 81</a>
+              <a class="" data-page="82" href="?page=82">Page 82</a>
+              <a class="" data-page="83" href="?page=83">Page 83</a>
+              <a class="" data-page="84" href="?page=84">Page 84</a>
+          </div>
+      </div>
+    </main>
+    <form class="frm-filters back" action="/reviews/televisions" method="GET" data-widget="ajaxProductList" data-widget-content-area="main">
+      <div class="select-wrapper sort-selector-wrapper">Sort by: <select class="sort-selector" name="sortby"><option selected="selected" value='sort.testing_date|desc' >Most-recently tested</option><option  value='sort.which_score|desc' disabled="disabled">Highest Which? score</option><option  value='sort.price|asc' >Price (low to high)</option><option  value='sort.price|desc' >Price (high to low)</option><option  value='sort.screen_size|desc' >Screen size (high to low)</option><option  value='sort.launch_date|desc' >Most-recently launched</option></select></div>
+        <aside class="product-filters">
+    <div class="product-filters-inner">
+      <button class="open-filters" type="button">Open filters</button>
+      <button class="toggle-filters icon-next" type="button" title="Open filters"></button>
+      <div class="actions">
+        <span class="lbl-filter-by">Refine</span>
+        <a class="action-clear-all" href="/reviews" data-track-key="refine_clear">Clear all</a>
+      </div>
+      <div class="container-facets"  data-widget="paywallFacets"  data-widget="collapsibleFacets">
+        <div class="screen-size multiple facet" data-category-name="screen-size">
+          <div class="heading-filter-options">
+            <h3><span class="facet-category-heading icon icon-tv"></span>Screen size</h3>
+          </div>
+          <div class="cont-filter-options toggle-panel">
+            <div class="filter-options">
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.screen_size[]" data-track-key="refine_filter" data-track-facet="filter.screen_size"
+                     data-track-value="17-26"
+                     value="17-26" 
+                     />
+                    <span class="inner-label">
+                      <div class="icon icon-tv"></div>
+                      17-26″
+                      <span class='count'>(68)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.screen_size[]" data-track-key="refine_filter" data-track-facet="filter.screen_size"
+                     data-track-value="27-38"
+                     value="27-38" 
+                     />
+                    <span class="inner-label">
+                      <div class="icon icon-tv"></div>
+                      27-38″
+                      <span class='count'>(128)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.screen_size[]" data-track-key="refine_filter" data-track-facet="filter.screen_size"
+                     data-track-value="39-46"
+                     value="39-46" 
+                     />
+                    <span class="inner-label">
+                      <div class="icon icon-tv"></div>
+                      39-46″
+                      <span class='count'>(229)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.screen_size[]" data-track-key="refine_filter" data-track-facet="filter.screen_size"
+                     data-track-value="47-55"
+                     value="47-55" 
+                     />
+                    <span class="inner-label">
+                      <div class="icon icon-tv"></div>
+                      47-55″
+                      <span class='count'>(249)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.screen_size[]" data-track-key="refine_filter" data-track-facet="filter.screen_size"
+                     data-track-value="56+"
+                     value="56+" 
+                     />
+                    <span class="inner-label">
+                      <div class="icon icon-tv"></div>
+                      56″+
+                      <span class='count'>(81)</span>
+                    </span>
+                  </label>
+            </div>
+          </div>
+        </div>
+        <div class="price range facet" data-category-name="price">
+          <div class="heading-filter-options">
+            <h3><span class="facet-category-heading icon icon-tag"></span>Price</h3>
+          </div>
+          <div class="cont-filter-options toggle-panel">
+            <div class="filter-options">
+                <span class="price-range-selector">
+                  <div class="select-wrapper">
+        <span class="currency-symbol">£</span><select name="filter.price[min]" class="min"><option data-track-key="refine" data-track-facet="min" data-track-value="No min" value="0">No min</option><option data-track-key="refine" data-track-facet="min" data-track-value="£100" value="100">£100</option><option data-track-key="refine" data-track-facet="min" data-track-value="£200" value="200">£200</option><option data-track-key="refine" data-track-facet="min" data-track-value="£300" value="300">£300</option><option data-track-key="refine" data-track-facet="min" data-track-value="£400" value="400">£400</option><option data-track-key="refine" data-track-facet="min" data-track-value="£500" value="500">£500</option><option data-track-key="refine" data-track-facet="min" data-track-value="£600" value="600">£600</option><option data-track-key="refine" data-track-facet="min" data-track-value="£700" value="700">£700</option><option data-track-key="refine" data-track-facet="min" data-track-value="£800" value="800">£800</option><option data-track-key="refine" data-track-facet="min" data-track-value="£900" value="900">£900</option><option data-track-key="refine" data-track-facet="min" data-track-value="£1000" value="1000">£1000</option><option data-track-key="refine" data-track-facet="min" data-track-value="£1100" value="1100">£1100</option><option data-track-key="refine" data-track-facet="min" data-track-value="£1200" value="1200">£1200</option><option data-track-key="refine" data-track-facet="min" data-track-value="£1300" value="1300">£1300</option><option data-track-key="refine" data-track-facet="min" data-track-value="£1400" value="1400">£1400</option><option data-track-key="refine" data-track-facet="min" data-track-value="£1500" value="1500">£1500</option><option data-track-key="refine" data-track-facet="min" data-track-value="£1600" value="1600">£1600</option><option data-track-key="refine" data-track-facet="min" data-track-value="£1700" value="1700">£1700</option><option data-track-key="refine" data-track-facet="min" data-track-value="£1800" value="1800">£1800</option><option data-track-key="refine" data-track-facet="min" data-track-value="£1900" value="1900">£1900</option><option data-track-key="refine" data-track-facet="min" data-track-value="£2000" value="2000">£2000</option><option data-track-key="refine" data-track-facet="min" data-track-value="£2000+" value="2147483647">£2000+</option></select>
+      </div> to <div class="select-wrapper">
+        <span class="currency-symbol">£</span><select name="filter.price[max]" class="max"><option data-track-key="refine" data-track-facet="max" data-track-value="No max" value="2147483646">No max</option><option data-track-key="refine" data-track-facet="max" data-track-value="£100" value="100">£100</option><option data-track-key="refine" data-track-facet="max" data-track-value="£200" value="200">£200</option><option data-track-key="refine" data-track-facet="max" data-track-value="£300" value="300">£300</option><option data-track-key="refine" data-track-facet="max" data-track-value="£400" value="400">£400</option><option data-track-key="refine" data-track-facet="max" data-track-value="£500" value="500">£500</option><option data-track-key="refine" data-track-facet="max" data-track-value="£600" value="600">£600</option><option data-track-key="refine" data-track-facet="max" data-track-value="£700" value="700">£700</option><option data-track-key="refine" data-track-facet="max" data-track-value="£800" value="800">£800</option><option data-track-key="refine" data-track-facet="max" data-track-value="£900" value="900">£900</option><option data-track-key="refine" data-track-facet="max" data-track-value="£1000" value="1000">£1000</option><option data-track-key="refine" data-track-facet="max" data-track-value="£1100" value="1100">£1100</option><option data-track-key="refine" data-track-facet="max" data-track-value="£1200" value="1200">£1200</option><option data-track-key="refine" data-track-facet="max" data-track-value="£1300" value="1300">£1300</option><option data-track-key="refine" data-track-facet="max" data-track-value="£1400" value="1400">£1400</option><option data-track-key="refine" data-track-facet="max" data-track-value="£1500" value="1500">£1500</option><option data-track-key="refine" data-track-facet="max" data-track-value="£1600" value="1600">£1600</option><option data-track-key="refine" data-track-facet="max" data-track-value="£1700" value="1700">£1700</option><option data-track-key="refine" data-track-facet="max" data-track-value="£1800" value="1800">£1800</option><option data-track-key="refine" data-track-facet="max" data-track-value="£1900" value="1900">£1900</option><option data-track-key="refine" data-track-facet="max" data-track-value="£2000" value="2000">£2000</option><option data-track-key="refine" data-track-facet="max" data-track-value="£2000+" value="2147483647">£2000+</option></select>
+      </div>
+                </span>
+                <span class="price-range-summary inactive">
+                </span>
+            </div>
+          </div>
+        </div>
+        <div class="which-recommends multiple facet" data-category-name="which-recommends">
+                <section class="js-paywall-banner paywall-banner--facets--hidden paywall-banner--mask" data-widget="paywallBanner" data-widget-expiry="60" data-widget-anchor-bottom=.js-paywall-last-cell>
+      <button
+        class="js-paywall-facets__action-close paywall-banner__action-close--top">
+        <span class="inner-text">Close</span>
+      </button>
+    <div class="paywall-banner__content">
+      <div class="paywall-banner__text--long">
+          <h2 class="paywall-banner__header">The quickest way to find your Television</h2>
+        <div>Get the inside track on 756 Television models with straight-talking, unbiased reviews and ratings from the Which? test lab. To see the full reviews just log in OR start your <strong>£1 trial</strong>.</div>
+      </div>
+      <div class="paywall-banner__text--short">
+        <h2 class="paywall-banner__header">Find your perfect Television</h2>
+        <div>See our expert Best Buy recommendations when you log in OR start your <strong>£1 trial</strong>.</div>
+      </div>
+      <ul class="paywall-banner__badges-container">
+        <li class="paywall-banner__badge">
+          <div class="which-badge--best-buy--small"><span class="which-badge__label--best-buy--small">Best Buy</span></div>
+          <div class="paywall-banner__badge__count">56</div>
+        </li>
+        <li class="paywall-banner__badge">
+          <div class="which-badge--dont-buy--small"><span class="which-badge__label--dont-buy--small">Don't Buy</span></div>
+          <div class="paywall-banner__badge__count">26</div>
+        </li>
+        <li class="paywall-banner__badge">
+          <div class="reviews-count-label">TELEVISIONS AVAILABLE</div>
+          <div class="paywall-banner__badge__count">756</div>
+        </li>
+      </ul>
+      <div class="paywall-banner__actions">
+        <a href="http://www.which.co.uk/login" class="paywall-banner__action button button-secondary icon-user">Log in</a>
+        <a href="http://www.which.co.uk/signup?intcmp=tvbeta" class="paywall-banner__action button button-primary icon-right">Start trial</a>
+      </div>
+    </div>
+    <div class="paywall-banner__review--full">
+      <div class="paywall-banner__review__inner"><a href="/reviews/televisions/sample" class="link-right--large paywall-banner__link-review js-sample-product-link" rel="nofollow"><span class="link-txt">See a sample review</span></a></div>
+    </div>
+  </section>
+
+            <div class="js-paywall-facets__member-exclusive-label paywall-facets__member-exclusive-label--open-with-facets">Member exclusive</div>
+          <div class="heading-filter-options-paywalled">
+            <h3><span class="facet-category-heading icon icon-thumbUp"></span>Which? recommends</h3>
+          </div>
+          <div class="cont-filter-options toggle-panel">
+            <div class="filter-options">
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.which_recommends[]" data-track-key="refine_filter" data-track-facet="filter.which_recommends"
+                     data-track-value="BEST_BUY"
+                     value="BEST_BUY" 
+                     />
+                    <span class="inner-label">
+                      
+                      Best Buy
+                      <span class='count'>(56)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.which_recommends[]" data-track-key="refine_filter" data-track-facet="filter.which_recommends"
+                     data-track-value="DONT_BUY"
+                     value="DONT_BUY" 
+                     />
+                    <span class="inner-label">
+                      
+                      Don&#39;t Buy
+                      <span class='count'>(26)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.which_recommends[]" data-track-key="refine_filter" data-track-facet="filter.which_recommends"
+                     data-track-value="ENERGY_SAVER_BB"
+                     value="ENERGY_SAVER_BB" 
+                     />
+                    <span class="inner-label">
+                      
+                      Energy Saver
+                      <span class='count'>(9)</span>
+                    </span>
+                  </label>
+                <div class="js-paywall-facets__facet-cover paywall-facets__facet-cover--open-with-facets"></div>
+            </div>
+          </div>
+        </div>
+        <div class="brands multiple facet" data-category-name="brands">
+          <div class="heading-filter-options">
+            <h3><span class="facet-category-heading icon icon-brand"></span>Brands</h3>
+          </div>
+          <div class="cont-filter-options toggle-panel">
+            <div class="filter-options">
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Panasonic"
+                     value="Panasonic" 
+                     />
+                    <span class="inner-label">
+                      
+                      Panasonic
+                      <span class='count'>(116)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Sony"
+                     value="Sony" 
+                     />
+                    <span class="inner-label">
+                      
+                      Sony
+                      <span class='count'>(57)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Samsung"
+                     value="Samsung" 
+                     />
+                    <span class="inner-label">
+                      
+                      Samsung
+                      <span class='count'>(193)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="LG"
+                     value="LG" 
+                     />
+                    <span class="inner-label">
+                      
+                      LG
+                      <span class='count'>(168)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Toshiba"
+                     value="Toshiba" 
+                     />
+                    <span class="inner-label">
+                      
+                      Toshiba
+                      <span class='count'>(47)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Sharp"
+                     value="Sharp" 
+                     />
+                    <span class="inner-label">
+                      
+                      Sharp
+                      <span class='count'>(23)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Philips"
+                     value="Philips" 
+                     />
+                    <span class="inner-label">
+                      
+                      Philips
+                      <span class='count'>(56)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Technika"
+                     value="Technika" 
+                     />
+                    <span class="inner-label">
+                      
+                      Technika
+                      <span class='count'>(4)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Hitachi"
+                     value="Hitachi" 
+                     />
+                    <span class="inner-label">
+                      
+                      Hitachi
+                      <span class='count'>(8)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Akai"
+                     value="Akai" 
+                     />
+                    <span class="inner-label">
+                      
+                      Akai
+                      <span class='count'>(2)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="B &amp; O"
+                     value="B &amp; O" 
+                     />
+                    <span class="inner-label">
+                      
+                      B &amp; O
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Blaupunkt"
+                     value="Blaupunkt" 
+                     />
+                    <span class="inner-label">
+                      
+                      Blaupunkt
+                      <span class='count'>(3)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Bose"
+                     value="Bose" 
+                     />
+                    <span class="inner-label">
+                      
+                      Bose
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Bush"
+                     value="Bush" 
+                     />
+                    <span class="inner-label">
+                      
+                      Bush
+                      <span class='count'>(3)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Cello"
+                     value="Cello" 
+                     />
+                    <span class="inner-label">
+                      
+                      Cello
+                      <span class='count'>(14)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Changhong"
+                     value="Changhong" 
+                     />
+                    <span class="inner-label">
+                      
+                      Changhong
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="DigiHome"
+                     value="DigiHome" 
+                     />
+                    <span class="inner-label">
+                      
+                      DigiHome
+                      <span class='count'>(2)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Finlux"
+                     value="Finlux" 
+                     />
+                    <span class="inner-label">
+                      
+                      Finlux
+                      <span class='count'>(4)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Goodmans"
+                     value="Goodmans" 
+                     />
+                    <span class="inner-label">
+                      
+                      Goodmans
+                      <span class='count'>(2)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Hannspree"
+                     value="Hannspree" 
+                     />
+                    <span class="inner-label">
+                      
+                      Hannspree
+                      <span class='count'>(2)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Hisense"
+                     value="Hisense" 
+                     />
+                    <span class="inner-label">
+                      
+                      Hisense
+                      <span class='count'>(4)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="John Lewis "
+                     value="John Lewis " 
+                     />
+                    <span class="inner-label">
+                      
+                      John Lewis 
+                      <span class='count'>(2)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="JVC"
+                     value="JVC" 
+                     />
+                    <span class="inner-label">
+                      
+                      JVC
+                      <span class='count'>(5)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Linsar"
+                     value="Linsar" 
+                     />
+                    <span class="inner-label">
+                      
+                      Linsar
+                      <span class='count'>(13)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Loewe"
+                     value="Loewe" 
+                     />
+                    <span class="inner-label">
+                      
+                      Loewe
+                      <span class='count'>(10)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Logik"
+                     value="Logik" 
+                     />
+                    <span class="inner-label">
+                      
+                      Logik
+                      <span class='count'>(4)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Polaroid"
+                     value="Polaroid" 
+                     />
+                    <span class="inner-label">
+                      
+                      Polaroid
+                      <span class='count'>(2)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Proscan"
+                     value="Proscan" 
+                     />
+                    <span class="inner-label">
+                      
+                      Proscan
+                      <span class='count'>(2)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Seiki"
+                     value="Seiki" 
+                     />
+                    <span class="inner-label">
+                      
+                      Seiki
+                      <span class='count'>(2)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.brand[]" data-track-key="refine_filter" data-track-facet="filter.brand"
+                     data-track-value="Visitech"
+                     value="Visitech" 
+                     />
+                    <span class="inner-label">
+                      
+                      Visitech
+                      <span class='count'>(5)</span>
+                    </span>
+                  </label>
+            </div>
+          </div>
+        </div>
+        <div class="retailers multiple facet" data-category-name="retailers">
+          <div class="heading-filter-options">
+            <h3><span class="facet-category-heading icon icon-basket"></span>Retailers</h3>
+          </div>
+          <div class="cont-filter-options toggle-panel">
+            <div class="filter-options">
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Amazon.co.uk"
+                     value="Amazon.co.uk" 
+                     />
+                    <span class="inner-label">
+                      
+                      Amazon.co.uk
+                      <span class='count'>(96)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Argos"
+                     value="Argos" 
+                     />
+                    <span class="inner-label">
+                      
+                      Argos
+                      <span class='count'>(117)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="The Co-operative Electrical"
+                     value="The Co-operative Electrical" 
+                     />
+                    <span class="inner-label">
+                      
+                      The Co-operative Electrical
+                      <span class='count'>(10)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Currys"
+                     value="Currys" 
+                     />
+                    <span class="inner-label">
+                      
+                      Currys
+                      <span class='count'>(161)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="John Lewis"
+                     value="John Lewis" 
+                     />
+                    <span class="inner-label">
+                      
+                      John Lewis
+                      <span class='count'>(113)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Richer Sounds (Stores)"
+                     value="Richer Sounds (Stores)" 
+                     />
+                    <span class="inner-label">
+                      
+                      Richer Sounds (Stores)
+                      <span class='count'>(122)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Amazon Marketplace UK"
+                     value="Amazon Marketplace UK" 
+                     />
+                    <span class="inner-label">
+                      
+                      Amazon Marketplace UK
+                      <span class='count'>(303)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="123Electricals4me"
+                     value="123Electricals4me" 
+                     />
+                    <span class="inner-label">
+                      
+                      123Electricals4me
+                      <span class='count'>(6)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Atlantic 2U"
+                     value="Atlantic 2U" 
+                     />
+                    <span class="inner-label">
+                      
+                      Atlantic 2U
+                      <span class='count'>(104)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Smart Choice 786"
+                     value="Smart Choice 786" 
+                     />
+                    <span class="inner-label">
+                      
+                      Smart Choice 786
+                      <span class='count'>(85)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="A and C audio visual"
+                     value="A and C audio visual" 
+                     />
+                    <span class="inner-label">
+                      
+                      A and C audio visual
+                      <span class='count'>(7)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Look Again"
+                     value="Look Again" 
+                     />
+                    <span class="inner-label">
+                      
+                      Look Again
+                      <span class='count'>(49)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="All Day Office Supplies"
+                     value="All Day Office Supplies" 
+                     />
+                    <span class="inner-label">
+                      
+                      All Day Office Supplies
+                      <span class='count'>(38)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="All Goods Direct"
+                     value="All Goods Direct" 
+                     />
+                    <span class="inner-label">
+                      
+                      All Goods Direct
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Amanet"
+                     value="Amanet" 
+                     />
+                    <span class="inner-label">
+                      
+                      Amanet
+                      <span class='count'>(7)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Click and Keyboard"
+                     value="Click and Keyboard" 
+                     />
+                    <span class="inner-label">
+                      
+                      Click and Keyboard
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="AO.com"
+                     value="AO.com" 
+                     />
+                    <span class="inner-label">
+                      
+                      AO.com
+                      <span class='count'>(51)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Asda Direct"
+                     value="Asda Direct" 
+                     />
+                    <span class="inner-label">
+                      
+                      Asda Direct
+                      <span class='count'>(18)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="ASK Direct"
+                     value="ASK Direct" 
+                     />
+                    <span class="inner-label">
+                      
+                      ASK Direct
+                      <span class='count'>(53)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Krish Audio-Visual"
+                     value="Krish Audio-Visual" 
+                     />
+                    <span class="inner-label">
+                      
+                      Krish Audio-Visual
+                      <span class='count'>(28)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Ortons Audio Visual"
+                     value="Ortons Audio Visual" 
+                     />
+                    <span class="inner-label">
+                      
+                      Ortons Audio Visual
+                      <span class='count'>(23)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Weybridge Audio"
+                     value="Weybridge Audio" 
+                     />
+                    <span class="inner-label">
+                      
+                      Weybridge Audio
+                      <span class='count'>(49)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Stone Audio"
+                     value="Stone Audio" 
+                     />
+                    <span class="inner-label">
+                      
+                      Stone Audio
+                      <span class='count'>(38)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Car Audio Centre"
+                     value="Car Audio Centre" 
+                     />
+                    <span class="inner-label">
+                      
+                      Car Audio Centre
+                      <span class='count'>(5)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="AV Experts"
+                     value="AV Experts" 
+                     />
+                    <span class="inner-label">
+                      
+                      AV Experts
+                      <span class='count'>(63)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="AV Lounge"
+                     value="AV Lounge" 
+                     />
+                    <span class="inner-label">
+                      
+                      AV Lounge
+                      <span class='count'>(12)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Sony Centre (Baker Street, London)"
+                     value="Sony Centre (Baker Street, London)" 
+                     />
+                    <span class="inner-label">
+                      
+                      Sony Centre (Baker Street, London)
+                      <span class='count'>(2)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Ballicom"
+                     value="Ballicom" 
+                     />
+                    <span class="inner-label">
+                      
+                      Ballicom
+                      <span class='count'>(41)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Beyond Television"
+                     value="Beyond Television" 
+                     />
+                    <span class="inner-label">
+                      
+                      Beyond Television
+                      <span class='count'>(68)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Selfridges (Bullring Centre, Birmingham)"
+                     value="Selfridges (Bullring Centre, Birmingham)" 
+                     />
+                    <span class="inner-label">
+                      
+                      Selfridges (Bullring Centre, Birmingham)
+                      <span class='count'>(10)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Harrods (Brompton Road, London)"
+                     value="Harrods (Brompton Road, London)" 
+                     />
+                    <span class="inner-label">
+                      
+                      Harrods (Brompton Road, London)
+                      <span class='count'>(8)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Shop BT"
+                     value="Shop BT" 
+                     />
+                    <span class="inner-label">
+                      
+                      Shop BT
+                      <span class='count'>(80)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Burrows Store"
+                     value="Burrows Store" 
+                     />
+                    <span class="inner-label">
+                      
+                      Burrows Store
+                      <span class='count'>(28)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Buyers &amp; Sellers"
+                     value="Buyers &amp; Sellers" 
+                     />
+                    <span class="inner-label">
+                      
+                      Buyers &amp; Sellers
+                      <span class='count'>(11)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="BuyHD"
+                     value="BuyHD" 
+                     />
+                    <span class="inner-label">
+                      
+                      BuyHD
+                      <span class='count'>(2)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Caboodle"
+                     value="Caboodle" 
+                     />
+                    <span class="inner-label">
+                      
+                      Caboodle
+                      <span class='count'>(2)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Calverts"
+                     value="Calverts" 
+                     />
+                    <span class="inner-label">
+                      
+                      Calverts
+                      <span class='count'>(34)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="JC Campbell Electrics"
+                     value="JC Campbell Electrics" 
+                     />
+                    <span class="inner-label">
+                      
+                      JC Campbell Electrics
+                      <span class='count'>(51)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Carbon Fusion"
+                     value="Carbon Fusion" 
+                     />
+                    <span class="inner-label">
+                      
+                      Carbon Fusion
+                      <span class='count'>(8)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="CBC Computers"
+                     value="CBC Computers" 
+                     />
+                    <span class="inner-label">
+                      
+                      CBC Computers
+                      <span class='count'>(5)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="CCL Computers Ltd (Intel)"
+                     value="CCL Computers Ltd (Intel)" 
+                     />
+                    <span class="inner-label">
+                      
+                      CCL Computers Ltd (Intel)
+                      <span class='count'>(58)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Harris Electrical (Euronics Centre) Lower Clapton Road, London"
+                     value="Harris Electrical (Euronics Centre) Lower Clapton Road, London" 
+                     />
+                    <span class="inner-label">
+                      
+                      Harris Electrical (Euronics Centre) Lower Clapton Road, London
+                      <span class='count'>(4)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Electrical Discount Centre"
+                     value="Electrical Discount Centre" 
+                     />
+                    <span class="inner-label">
+                      
+                      Electrical Discount Centre
+                      <span class='count'>(35)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Cheap Electricals"
+                     value="Cheap Electricals" 
+                     />
+                    <span class="inner-label">
+                      
+                      Cheap Electricals
+                      <span class='count'>(73)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Comcen"
+                     value="Comcen" 
+                     />
+                    <span class="inner-label">
+                      
+                      Comcen
+                      <span class='count'>(35)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Communications Solutions"
+                     value="Communications Solutions" 
+                     />
+                    <span class="inner-label">
+                      
+                      Communications Solutions
+                      <span class='count'>(93)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Computerlink UK"
+                     value="Computerlink UK" 
+                     />
+                    <span class="inner-label">
+                      
+                      Computerlink UK
+                      <span class='count'>(53)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Eclipse Computers"
+                     value="Eclipse Computers" 
+                     />
+                    <span class="inner-label">
+                      
+                      Eclipse Computers
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="TGC Computers"
+                     value="TGC Computers" 
+                     />
+                    <span class="inner-label">
+                      
+                      TGC Computers
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="LE Concepts"
+                     value="LE Concepts" 
+                     />
+                    <span class="inner-label">
+                      
+                      LE Concepts
+                      <span class='count'>(46)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Hi-Fi Corner"
+                     value="Hi-Fi Corner" 
+                     />
+                    <span class="inner-label">
+                      
+                      Hi-Fi Corner
+                      <span class='count'>(3)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="CPC"
+                     value="CPC" 
+                     />
+                    <span class="inner-label">
+                      
+                      CPC
+                      <span class='count'>(50)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Crampton &amp; Moore"
+                     value="Crampton &amp; Moore" 
+                     />
+                    <span class="inner-label">
+                      
+                      Crampton &amp; Moore
+                      <span class='count'>(85)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Currys Digital (Oxford Street, London)"
+                     value="Currys Digital (Oxford Street, London)" 
+                     />
+                    <span class="inner-label">
+                      
+                      Currys Digital (Oxford Street, London)
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="dabs.com"
+                     value="dabs.com" 
+                     />
+                    <span class="inner-label">
+                      
+                      dabs.com
+                      <span class='count'>(79)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Digispot"
+                     value="Digispot" 
+                     />
+                    <span class="inner-label">
+                      
+                      Digispot
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Viking Direct"
+                     value="Viking Direct" 
+                     />
+                    <span class="inner-label">
+                      
+                      Viking Direct
+                      <span class='count'>(26)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Reliant Direct"
+                     value="Reliant Direct" 
+                     />
+                    <span class="inner-label">
+                      
+                      Reliant Direct
+                      <span class='count'>(59)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Laptops Direct"
+                     value="Laptops Direct" 
+                     />
+                    <span class="inner-label">
+                      
+                      Laptops Direct
+                      <span class='count'>(10)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Direct TVs"
+                     value="Direct TVs" 
+                     />
+                    <span class="inner-label">
+                      
+                      Direct TVs
+                      <span class='count'>(99)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Sonic Direct"
+                     value="Sonic Direct" 
+                     />
+                    <span class="inner-label">
+                      
+                      Sonic Direct
+                      <span class='count'>(150)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Finlux Direct"
+                     value="Finlux Direct" 
+                     />
+                    <span class="inner-label">
+                      
+                      Finlux Direct
+                      <span class='count'>(4)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Tesco Direct"
+                     value="Tesco Direct" 
+                     />
+                    <span class="inner-label">
+                      
+                      Tesco Direct
+                      <span class='count'>(98)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Lords Electrical Direct"
+                     value="Lords Electrical Direct" 
+                     />
+                    <span class="inner-label">
+                      
+                      Lords Electrical Direct
+                      <span class='count'>(49)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="UK Office Direct"
+                     value="UK Office Direct" 
+                     />
+                    <span class="inner-label">
+                      
+                      UK Office Direct
+                      <span class='count'>(62)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="PRC Direct"
+                     value="PRC Direct" 
+                     />
+                    <span class="inner-label">
+                      
+                      PRC Direct
+                      <span class='count'>(163)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Electrical Discount UK"
+                     value="Electrical Discount UK" 
+                     />
+                    <span class="inner-label">
+                      
+                      Electrical Discount UK
+                      <span class='count'>(68)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="RLR distribution"
+                     value="RLR distribution" 
+                     />
+                    <span class="inner-label">
+                      
+                      RLR distribution
+                      <span class='count'>(22)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="District Electricals"
+                     value="District Electricals" 
+                     />
+                    <span class="inner-label">
+                      
+                      District Electricals
+                      <span class='count'>(25)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Ebuyer"
+                     value="Ebuyer" 
+                     />
+                    <span class="inner-label">
+                      
+                      Ebuyer
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Eldon Electricals"
+                     value="Eldon Electricals" 
+                     />
+                    <span class="inner-label">
+                      
+                      Eldon Electricals
+                      <span class='count'>(34)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Lunneys Electrical"
+                     value="Lunneys Electrical" 
+                     />
+                    <span class="inner-label">
+                      
+                      Lunneys Electrical
+                      <span class='count'>(2)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Go Electrical"
+                     value="Go Electrical" 
+                     />
+                    <span class="inner-label">
+                      
+                      Go Electrical
+                      <span class='count'>(11)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="West Midlands Electrical Superstore"
+                     value="West Midlands Electrical Superstore" 
+                     />
+                    <span class="inner-label">
+                      
+                      West Midlands Electrical Superstore
+                      <span class='count'>(18)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Purewell Electrical"
+                     value="Purewell Electrical" 
+                     />
+                    <span class="inner-label">
+                      
+                      Purewell Electrical
+                      <span class='count'>(94)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Electrical Experience"
+                     value="Electrical Experience" 
+                     />
+                    <span class="inner-label">
+                      
+                      Electrical Experience
+                      <span class='count'>(112)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Newry Electrical (Ireland)"
+                     value="Newry Electrical (Ireland)" 
+                     />
+                    <span class="inner-label">
+                      
+                      Newry Electrical (Ireland)
+                      <span class='count'>(8)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Simply Electricals"
+                     value="Simply Electricals" 
+                     />
+                    <span class="inner-label">
+                      
+                      Simply Electricals
+                      <span class='count'>(79)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="electricshop.com"
+                     value="electricshop.com" 
+                     />
+                    <span class="inner-label">
+                      
+                      electricshop.com
+                      <span class='count'>(90)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="KK Electronics"
+                     value="KK Electronics" 
+                     />
+                    <span class="inner-label">
+                      
+                      KK Electronics
+                      <span class='count'>(17)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="GBR Electronics"
+                     value="GBR Electronics" 
+                     />
+                    <span class="inner-label">
+                      
+                      GBR Electronics
+                      <span class='count'>(8)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Euroffice"
+                     value="Euroffice" 
+                     />
+                    <span class="inner-label">
+                      
+                      Euroffice
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Euronics UK"
+                     value="Euronics UK" 
+                     />
+                    <span class="inner-label">
+                      
+                      Euronics UK
+                      <span class='count'>(40)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Store Evol"
+                     value="Store Evol" 
+                     />
+                    <span class="inner-label">
+                      
+                      Store Evol
+                      <span class='count'>(65)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Future1"
+                     value="Future1" 
+                     />
+                    <span class="inner-label">
+                      
+                      Future1
+                      <span class='count'>(10)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Gigaworld"
+                     value="Gigaworld" 
+                     />
+                    <span class="inner-label">
+                      
+                      Gigaworld
+                      <span class='count'>(7)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Planet Gizmo"
+                     value="Planet Gizmo" 
+                     />
+                    <span class="inner-label">
+                      
+                      Planet Gizmo
+                      <span class='count'>(7)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="HiSpek"
+                     value="HiSpek" 
+                     />
+                    <span class="inner-label">
+                      
+                      HiSpek
+                      <span class='count'>(25)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="TJ Hughes"
+                     value="TJ Hughes" 
+                     />
+                    <span class="inner-label">
+                      
+                      TJ Hughes
+                      <span class='count'>(8)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Yes Infotech"
+                     value="Yes Infotech" 
+                     />
+                    <span class="inner-label">
+                      
+                      Yes Infotech
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="The Yorkshire IT Outlet"
+                     value="The Yorkshire IT Outlet" 
+                     />
+                    <span class="inner-label">
+                      
+                      The Yorkshire IT Outlet
+                      <span class='count'>(78)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="LetsGoDigital"
+                     value="LetsGoDigital" 
+                     />
+                    <span class="inner-label">
+                      
+                      LetsGoDigital
+                      <span class='count'>(49)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Littlewoods"
+                     value="Littlewoods" 
+                     />
+                    <span class="inner-label">
+                      
+                      Littlewoods
+                      <span class='count'>(77)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Multiregion Magic"
+                     value="Multiregion Magic" 
+                     />
+                    <span class="inner-label">
+                      
+                      Multiregion Magic
+                      <span class='count'>(22)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Micom"
+                     value="Micom" 
+                     />
+                    <span class="inner-label">
+                      
+                      Micom
+                      <span class='count'>(68)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="My Premier"
+                     value="My Premier" 
+                     />
+                    <span class="inner-label">
+                      
+                      My Premier
+                      <span class='count'>(43)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="PC Nation"
+                     value="PC Nation" 
+                     />
+                    <span class="inner-label">
+                      
+                      PC Nation
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Office Nerd"
+                     value="Office Nerd" 
+                     />
+                    <span class="inner-label">
+                      
+                      Office Nerd
+                      <span class='count'>(64)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Netcom Online"
+                     value="Netcom Online" 
+                     />
+                    <span class="inner-label">
+                      
+                      Netcom Online
+                      <span class='count'>(38)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="O&#39;Gormans"
+                     value="O&#39;Gormans" 
+                     />
+                    <span class="inner-label">
+                      
+                      O&#39;Gormans
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="The Office Supplies Supermarket"
+                     value="The Office Supplies Supermarket" 
+                     />
+                    <span class="inner-label">
+                      
+                      The Office Supplies Supermarket
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Office Shopping"
+                     value="Office Shopping" 
+                     />
+                    <span class="inner-label">
+                      
+                      Office Shopping
+                      <span class='count'>(8)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Sainsbury&#39;s Online"
+                     value="Sainsbury&#39;s Online" 
+                     />
+                    <span class="inner-label">
+                      
+                      Sainsbury&#39;s Online
+                      <span class='count'>(4)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Selfridges (Oxford Street)"
+                     value="Selfridges (Oxford Street)" 
+                     />
+                    <span class="inner-label">
+                      
+                      Selfridges (Oxford Street)
+                      <span class='count'>(11)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="PC World"
+                     value="PC World" 
+                     />
+                    <span class="inner-label">
+                      
+                      PC World
+                      <span class='count'>(149)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Pixplace UK"
+                     value="Pixplace UK" 
+                     />
+                    <span class="inner-label">
+                      
+                      Pixplace UK
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="play.com"
+                     value="play.com" 
+                     />
+                    <span class="inner-label">
+                      
+                      play.com
+                      <span class='count'>(204)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Pricelover"
+                     value="Pricelover" 
+                     />
+                    <span class="inner-label">
+                      
+                      Pricelover
+                      <span class='count'>(1)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Samsung"
+                     value="Samsung" 
+                     />
+                    <span class="inner-label">
+                      
+                      Samsung
+                      <span class='count'>(10)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Shoplet"
+                     value="Shoplet" 
+                     />
+                    <span class="inner-label">
+                      
+                      Shoplet
+                      <span class='count'>(6)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Silicon Street"
+                     value="Silicon Street" 
+                     />
+                    <span class="inner-label">
+                      
+                      Silicon Street
+                      <span class='count'>(68)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Stuff UK"
+                     value="Stuff UK" 
+                     />
+                    <span class="inner-label">
+                      
+                      Stuff UK
+                      <span class='count'>(120)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Superfi"
+                     value="Superfi" 
+                     />
+                    <span class="inner-label">
+                      
+                      Superfi
+                      <span class='count'>(46)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="TechDNA"
+                     value="TechDNA" 
+                     />
+                    <span class="inner-label">
+                      
+                      TechDNA
+                      <span class='count'>(46)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="TechnoPieces"
+                     value="TechnoPieces" 
+                     />
+                    <span class="inner-label">
+                      
+                      TechnoPieces
+                      <span class='count'>(11)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Tekshop24"
+                     value="Tekshop24" 
+                     />
+                    <span class="inner-label">
+                      
+                      Tekshop24
+                      <span class='count'>(67)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Tribal UK"
+                     value="Tribal UK" 
+                     />
+                    <span class="inner-label">
+                      
+                      Tribal UK
+                      <span class='count'>(39)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="TV Village"
+                     value="TV Village" 
+                     />
+                    <span class="inner-label">
+                      
+                      TV Village
+                      <span class='count'>(3)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.retailer[]" data-track-key="refine_filter" data-track-facet="filter.retailer"
+                     data-track-value="Vaughans"
+                     value="Vaughans" 
+                     />
+                    <span class="inner-label">
+                      
+                      Vaughans
+                      <span class='count'>(53)</span>
+                    </span>
+                  </label>
+            </div>
+          </div>
+        </div>
+        <div class="best-for multiple facet" data-category-name="best-for">
+                <section class="js-paywall-banner paywall-banner--facets--hidden paywall-banner--mask" data-widget="paywallBanner" data-widget-expiry="60" data-widget-anchor-bottom=.js-paywall-last-cell>
+      <button
+        class="js-paywall-facets__action-close paywall-banner__action-close--top">
+        <span class="inner-text">Close</span>
+      </button>
+    <div class="paywall-banner__content">
+      <div class="paywall-banner__text--long">
+          <h2 class="paywall-banner__header">The quickest way to find your Television</h2>
+        <div>Get the inside track on 756 Television models with straight-talking, unbiased reviews and ratings from the Which? test lab. To see the full reviews just log in OR start your <strong>£1 trial</strong>.</div>
+      </div>
+      <div class="paywall-banner__text--short">
+        <h2 class="paywall-banner__header">Find your perfect Television</h2>
+        <div>See our expert Best Buy recommendations when you log in OR start your <strong>£1 trial</strong>.</div>
+      </div>
+      <ul class="paywall-banner__badges-container">
+        <li class="paywall-banner__badge">
+          <div class="which-badge--best-buy--small"><span class="which-badge__label--best-buy--small">Best Buy</span></div>
+          <div class="paywall-banner__badge__count">56</div>
+        </li>
+        <li class="paywall-banner__badge">
+          <div class="which-badge--dont-buy--small"><span class="which-badge__label--dont-buy--small">Don't Buy</span></div>
+          <div class="paywall-banner__badge__count">26</div>
+        </li>
+        <li class="paywall-banner__badge">
+          <div class="reviews-count-label">TELEVISIONS AVAILABLE</div>
+          <div class="paywall-banner__badge__count">756</div>
+        </li>
+      </ul>
+      <div class="paywall-banner__actions">
+        <a href="http://www.which.co.uk/login" class="paywall-banner__action button button-secondary icon-user">Log in</a>
+        <a href="http://www.which.co.uk/signup?intcmp=tvbeta" class="paywall-banner__action button button-primary icon-right">Start trial</a>
+      </div>
+    </div>
+    <div class="paywall-banner__review--full">
+      <div class="paywall-banner__review__inner"><a href="/reviews/televisions/sample" class="link-right--large paywall-banner__link-review js-sample-product-link" rel="nofollow"><span class="link-txt">See a sample review</span></a></div>
+    </div>
+  </section>
+
+            <div class="js-paywall-facets__member-exclusive-label paywall-facets__member-exclusive-label--open-with-facets">Member exclusive</div>
+          <div class="heading-filter-options-paywalled">
+            <h3><span class="facet-category-heading icon icon-thumbUp"></span>Best for</h3>
+          </div>
+          <div class="cont-filter-options toggle-panel">
+            <div class="filter-options">
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.human_need_filters[]" data-track-key="refine_filter" data-track-facet="filter.human_need_filters"
+                     data-track-value="FILM_BB"
+                     value="FILM_BB" 
+                     />
+                    <span class="inner-label">
+                      
+                      Films
+                      <span class='count'>(5)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.human_need_filters[]" data-track-key="refine_filter" data-track-facet="filter.human_need_filters"
+                     data-track-value="SPORT_BB"
+                     value="SPORT_BB" 
+                     />
+                    <span class="inner-label">
+                      
+                      Sport
+                      <span class='count'>(9)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.human_need_filters[]" data-track-key="refine_filter" data-track-facet="filter.human_need_filters"
+                     data-track-value="SMALL_ROOM_BB"
+                     value="SMALL_ROOM_BB" 
+                     />
+                    <span class="inner-label">
+                      
+                      Small room
+                      <span class='count'>(2)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.human_need_filters[]" data-track-key="refine_filter" data-track-facet="filter.human_need_filters"
+                     data-track-value="MEDIUM_ROOM_BB"
+                     value="MEDIUM_ROOM_BB" 
+                     />
+                    <span class="inner-label">
+                      
+                      Medium room
+                      <span class='count'>(8)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.human_need_filters[]" data-track-key="refine_filter" data-track-facet="filter.human_need_filters"
+                     data-track-value="LARGE_ROOM_BB"
+                     value="LARGE_ROOM_BB" 
+                     />
+                    <span class="inner-label">
+                      
+                      Large room
+                      <span class='count'>(10)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.human_need_filters[]" data-track-key="refine_filter" data-track-facet="filter.human_need_filters"
+                     data-track-value="GAMING_BB"
+                     value="GAMING_BB" 
+                     />
+                    <span class="inner-label">
+                      
+                      Games
+                      <span class='count'>(11)</span>
+                    </span>
+                  </label>
+                <div class="js-paywall-facets__facet-cover paywall-facets__facet-cover--open-with-facets"></div>
+            </div>
+          </div>
+        </div>
+        <div class="features multiple facet" data-category-name="features">
+          <div class="heading-filter-options">
+            <h3><span class="facet-category-heading icon icon-rate"></span>Features</h3>
+          </div>
+          <div class="cont-filter-options toggle-panel">
+            <div class="filter-options">
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.has_smart_tv[]" data-track-key="refine_filter" data-track-facet="filter.has_smart_tv"
+                     data-track-value="Smart Tv"
+                     value="Smart Tv" 
+                     />
+                    <span class="inner-label">
+                      
+                      Smart TV
+                      <span class='count'>(501)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.has_3dtv[]" data-track-key="refine_filter" data-track-facet="filter.has_3dtv"
+                     data-track-value="3D TV"
+                     value="3D TV" 
+                     />
+                    <span class="inner-label">
+                      
+                      3D TV
+                      <span class='count'>(349)</span>
+                    </span>
+                  </label>
+            </div>
+          </div>
+        </div>
+        <div class="tech-specs multiple facet" data-category-name="tech-specs">
+          <div class="heading-filter-options">
+            <h3><span class="facet-category-heading icon icon-slideshow"></span>Tech specs</h3>
+          </div>
+          <div class="cont-filter-options toggle-panel">
+            <div class="filter-options">
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.screen_type[]" data-track-key="refine_filter" data-track-facet="filter.screen_type"
+                     data-track-value="LCD"
+                     value="LCD" 
+                     />
+                    <span class="inner-label">
+                      
+                      LCD
+                      <span class='count'>(185)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.screen_type[]" data-track-key="refine_filter" data-track-facet="filter.screen_type"
+                     data-track-value="LED"
+                     value="LED" 
+                     />
+                    <span class="inner-label">
+                      
+                      LED
+                      <span class='count'>(518)</span>
+                    </span>
+                  </label>
+                  <label class="inactive">
+                    <input type="checkbox" name="filter.screen_type[]" data-track-key="refine_filter" data-track-facet="filter.screen_type"
+                     data-track-value="Plasma"
+                     value="Plasma" 
+                     />
+                    <span class="inner-label">
+                      
+                      Plasma
+                      <span class='count'>(47)</span>
+                    </span>
+                  </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+    </form>
+  </div>
+</div>
+<div class="actions-apply">
+  <button type="button" class="cancel-filters button button-tertiary-small">Cancel</button>
+  <button type="button" class="apply-filters button button-primary-small">View <span class="product-count">756</span></button>
+</div>
+
+
+
+</div>
+  <div class="cont-products-compare">
+    <ul>
+</ul>
+<a class="view-comparison button button-primary icon-right" href="/reviews/televisions/compare">Compare</a>
+
+  </div>
+
+<script>
+  var WHICH = WHICH || {};
+  WHICH.userId = null;
+  WHICH.isBehindPaywall = true;
+  WHICH.ga_code = 'UA-36254087-3';
+  WHICH.category = {
+    singular: 'Television',
+    plural: 'Televisions'
+  };
+</script>
+<script src="https://cb221f9ed3aff0dcdae1-c271b55f96bd2eefabe3dbd471f05b11.ssl.cf3.rackcdn.com/assets/application-e6b3245bbfc6b4f6f043f21a62a5168c.js"></script>
+
+<script>
+  new WHICH.Header({
+    $container: $('body')
+  });
+</script>
+
+
+
+
+
+
+  <script>
+    var WHICH = WHICH || {};
+    WHICH.modules = {
+      tvListings: new WHICH.TvListings($('body')),
+      comparisonAdd: new WHICH.ComparisonAdd($('body'))
+    };
+  </script>
+
+</body>
+</html>
